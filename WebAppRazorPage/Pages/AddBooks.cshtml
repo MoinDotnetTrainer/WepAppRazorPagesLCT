@@ -1,0 +1,27 @@
+﻿@page
+@model WebAppRazorPage.Pages.AddBooksModel
+@{
+}
+<form method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-1"> BookName</div>
+                <div class="col-1"><input type="text" asp-for="_Books.BookName" /></div>
+            </div>
+            <div class="row">
+                <div class="col-1">Qty</div>
+                <div class="col-1"><input type="number" asp-for="_Books.Qty" /></div>
+            </div>
+        <div class="row">
+            <div class="col-1"> Price</div>
+            <div class="col-1"><input type="text" asp-for="_Books.Price"  /></div>
+        </div>
+
+            <div class="row">
+                <div class="col-1">
+                    <input type="submit" value="submit" name="submit" />
+                    @TempData["res"]
+                </div>
+            </div>
+        </div>
+</form>

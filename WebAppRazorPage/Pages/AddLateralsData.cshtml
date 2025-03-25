@@ -1,0 +1,28 @@
+﻿@page
+@model WebAppRazorPage.Pages.AddLateralsDataModel
+@{
+}
+
+<form method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-1"> Name</div>
+            <div class="col-1"><input type="text" asp-for="_LateralData.Name" /></div>
+        </div>
+        <div class="row">
+            <div class="col-1">Email</div>
+            <div class="col-1"><input type="email" asp-for="_LateralData.Email" /></div>
+        </div>
+        <div class="row">
+            <div class="col-1"> Password</div>
+            <div class="col-1"><input type="password" asp-for="_LateralData.Password" /></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1">
+                <input type="submit" value="submit" name="submit" />
+                @TempData["res"]
+            </div>
+        </div>
+    </div>
+</form>
