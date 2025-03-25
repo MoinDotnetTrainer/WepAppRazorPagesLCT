@@ -1,0 +1,25 @@
+﻿@page
+@model WebAppRazorPage.Pages.AdditionModel
+@{
+}
+
+
+<form method="post">
+    <div class="container">
+        <div class="row">
+            <div class="col-1">Enter X</div>
+            <div class="col-1"><input type="text" name="txt1" /></div>
+        </div>
+        <div class="row">
+            <div class="col-1">Enter y</div>
+            <div class="col-1"><input type="text" name="txt2" /></div>
+        </div>
+
+        <div class="row">
+            <div class="col-1">
+                <input type="submit" value="submit" name="submit" />
+                @TempData["res"]
+            </div>
+        </div>
+    </div>
+</form>
