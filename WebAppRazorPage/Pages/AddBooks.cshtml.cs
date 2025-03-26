@@ -19,11 +19,20 @@ namespace WebAppRazorPage.Pages
         {
         }
 
-        public void OnPost()
+        public ActionResult OnPost()
         {
             //Insert Operation
             _databaseContext.Books.Add(_Books);
-            _databaseContext.SaveChanges();
+           int res= _databaseContext.SaveChanges();//1
+            if (res == 0)
+            {
+                TempData["res"] = "Something went Wrong";
+            }
+            else
+            {
+                return RedirectToPage("./ViewBooks");
+            }
+            return Page();
         }
     }
 }

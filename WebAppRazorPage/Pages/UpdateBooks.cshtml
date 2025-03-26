@@ -1,12 +1,13 @@
 ﻿@page
-@model WebAppRazorPage.Pages.AddBooksModel
+@model WebAppRazorPage.Pages.UpdateBooksModel
 @{
 }
 <form method="post">
     <div class="container">
         <div class="row">
             <div class="col-1"> BookName</div>
-            <div class="col-1"><input type="text" asp-for="_Books.BookName" /></div>
+            <input type="hidden" asp-for="_Books.ID" />
+            <div class="col-1"><input type="text" asp-for="_Books.BookName"  /></div>
         </div>
         <div class="row">
             <div class="col-1">Qty</div>

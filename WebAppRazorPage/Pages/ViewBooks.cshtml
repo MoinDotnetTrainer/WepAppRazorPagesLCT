@@ -1,0 +1,50 @@
+﻿@page
+@model WebAppRazorPage.Pages.ViewBooksModel
+@{
+}
+@if (Model._Books.Count==0) {
+    <p>No Data</p>
+}
+else
+{
+    <table class="table table-striped">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Qty
+            </th>
+            <th>
+                Price
+            </th>
+            <th>Action</th>
+        </tr>
+        @foreach (var item in Model._Books) { 
+        <tr>
+            <td>
+                @item.ID
+            </td>
+                <td>
+                    @item.BookName
+                </td>
+                <td>
+                    @item.Qty
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                    <a href="/UpdateBooks?ID=@item.ID">Update Books</a>|
+                    <a href="/DeleteBooks?ID=@item.ID">Delete Books</a>
+                </td>
+        </tr>
+        }
+    </table>
+    <div>
+        <a asp-page="/AddBooks">Create Books</a>
+    </div>
+}
